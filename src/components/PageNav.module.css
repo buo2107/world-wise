@@ -1,19 +1,34 @@
 .nav {
-  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
 }
 
-/* 
-    This :global() function here is usually mostly important when we are working with some classes that are provided from external sources.
-    In this case, the .active class is given to us by React Router, so then if we want to style that, we need to use tis :global()
-    
-    Otherwise, if we just want to define some global classes, we wouldn't do it inside a module but just inside our global CSS file (index.css)
- */
-.nav :global(.active) {
-  background-color: green;
+.nav a:link,
+.nav a:visited {
+  text-decoration: none;
+  color: var(--color-light--2);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* CSS Modules feature */
+.nav a:global(.active) {
+  color: var(--color-brand--2);
+}
+
+a.ctaLink:link,
+a.ctaLink:visited {
+  background-color: var(--color-brand--2);
+  color: var(--color-dark--0);
+  padding: 0.8rem 2rem;
+  border-radius: 7px;
 }
