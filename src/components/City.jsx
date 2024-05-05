@@ -1,9 +1,9 @@
 import { useParams } from "react-router";
 import styles from "./City.module.css";
-import { useSearchParams } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
 import { useEffect } from "react";
 import BackButton from "./BackButton";
+import Spinner from "./Spinner";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -16,25 +16,16 @@ const formatDate = (date) =>
 function City() {
   // Read the data from URL
   const { id } = useParams();
-  // console.log(id);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const {currentCity, getCity, isLoading} = useCities()
+  const { currentCity, getCity, isLoading } = useCities();
 
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
-
-  useEffect(function() {
-    getCity(id)
-  }, [id])
+  useEffect(
+    function () {
+      getCity(id);
+    },
+    [id]
+  );
 
   if (isLoading) return <Spinner />;
-  // TEMP DATA
-  // const currentCity = {
-  //   cityName: "Lisbon",
-  //   emoji: "🇵🇹",
-  //   date: "2027-10-31T15:59:59.138Z",
-  //   notes: "My favorite city so far!",
-  // };
 
   const { cityName, emoji, date, notes } = currentCity;
 

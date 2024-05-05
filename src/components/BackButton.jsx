@@ -1,17 +1,19 @@
 import Button from "./Button";
+import { useNavigate } from "react-router";
 
 function BackButton() {
-    return (
-        <Button
-        type="back"
-        onClick={(e) => {
-          e.preventDefault();
-          navigate(-1);
-        }}
-      >
-        &larr; Back
-      </Button>
-    );
-  }
-  
-  export default BackButton;
+  const navigate = useNavigate();
+  return (
+    <Button
+      type="back"
+      onClick={(e) => {
+        e.preventDefault();
+        navigate(-1);
+      }}
+    >
+      &larr; Back
+    </Button>
+  );
+}
+
+export default BackButton;
