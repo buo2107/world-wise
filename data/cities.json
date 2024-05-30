@@ -25,16 +25,16 @@
       "id": "17806751"
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "f8f7",
+      "cityName": "Alimena",
+      "country": "Italy",
+      "emoji": "🇮🇹",
+      "date": "2024-05-30T08:31:39.251Z",
+      "notes": "",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
+        "lat": "37.63163475580645",
+        "lng": "14.150390625000002"
+      }
     }
   ]
 }
